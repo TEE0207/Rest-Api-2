@@ -1,0 +1,17 @@
+
+
+.display{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    
+}
+
+.displayEach{
+    width: 23%;
+    height: auto;
+}

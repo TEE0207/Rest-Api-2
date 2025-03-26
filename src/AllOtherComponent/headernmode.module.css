@@ -1,0 +1,42 @@
+.allContentContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headingContainer{
+    width: fit-content;
+    height: auto;
+    /* word-spacing: -0.1rem; */
+    letter-spacing: -0.1rem;
+}
+
+.iconAndTitleContainer{
+    width: fit-content;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.7rem;
+    align-items: center;
+    
+    
+}
+
+.iconContainer{
+    width: 20px;
+    height: 20px;
+}
+
+.icon{
+    width: 100%;
+    height: 100%;
+}
+
+.titleContainer{
+    width: fit-content;
+    height: auto;
+    font-weight: 600;
+}

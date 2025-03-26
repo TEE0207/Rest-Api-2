@@ -1,0 +1,68 @@
+.allContentContainer{
+    width : 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: start;
+    row-gap: 0.8rem;
+}
+
+.imageContainer{
+    width: 100%;
+    height: auto;
+}
+
+.imageContainer{
+    width: 100%;
+    height: auto;
+}
+
+.titleAndDescriptionContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 1rem;
+
+}
+
+.countryTitleContainer{
+    width: fit-content;
+    height: auto;
+}
+
+
+.countryDescriptionContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.3rem;
+}
+
+.text{
+    color: rgba(17, 21, 23, 0.7);
+    font-weight: 300;
+}
+
+.populationContainer{
+    width: fit-content;
+    height: auto;
+    font-weight:550 ;
+}
+
+.regionContainer{
+    width: fit-content;
+    height: auto;
+    font-weight:550 ;
+
+}
+
+.capitalContainer{
+    width: fit-content;
+    height: auto;
+    font-weight:550 ;
+
+}
