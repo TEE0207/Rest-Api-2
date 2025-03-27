@@ -6,7 +6,7 @@ const ListDisplayComponent = ({countryName,image, flagName, population, region, 
         <div className={styles.allContentContainer}>
 
             <div className={styles.imageContainer}>
-                <img src={image} alt={flagName} className={styles.imageContainer}/>
+                <img src={image} alt={flagName} className={styles.image}/>
 
             </div>
 
@@ -14,7 +14,7 @@ const ListDisplayComponent = ({countryName,image, flagName, population, region, 
             <div className={styles.titleAndDescriptionContainer}>
                 
                     <div className={styles.countryTitleContainer}>
-                        <h1>{countryName}</h1>
+                        <h3>{countryName}</h3>
 
                     </div>
 

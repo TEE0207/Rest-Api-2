@@ -11,13 +11,14 @@ export const NewRoot = () =>{
     return(
         <div className={styles.mainPage}>
 
-        <div className={`${styles.theHeader} ${isDarkMode ? styles.dark : styles.light}`}>
+            <div className={`${styles.theHeader} ${isDarkMode ? styles.dark : styles.light}`}>
                 <HeaderNModeComponent />
 
+
+                <Outlet />
             </div>
 
           
-                <Outlet />
             </div>
 
 

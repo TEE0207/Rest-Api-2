@@ -1,65 +1,79 @@
-// src/DisplayLayoutComponent.js
-
-// import { NavLink, useLoaderData } from 'react-router';
+import { useState , useRef } from 'react';
+import { IoMdSearch } from "react-icons/io";
+import { useLoaderData } from 'react-router';
 import ListDisplayComponent from './AllOtherComponent/ListDisplayComponent';
 import styles from './displaylayoutcomponent.module.css';
-import { useEffect, useState } from 'react';
-// import { countriesLoader } from './OurListLoader';
-
-
-
 
 const DisplayLayoutComponent = () => {
+  const countries = useLoaderData();
 
+  const inputRef = useRef(null);
 
-  const [countries, setCountries] =useState([])
+  // State for search query and region filter
+  const [search, setSearch] = useState('');
+  const [selectedRegion, setSelectedRegion] = useState('All');
 
-  useEffect(()=>{
-
-    const countriesLoader = async () => {
-      const response = await fetch('https://restcountries.com/v3.1/all');
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-       const data = await response.json();
-      setCountries(data)
-    }; countriesLoader()
-
-  }, [])
-
-  console.log(countries)
-
-  // const countries = useLoaderData();
-  // console.log(countries)
-
-  
-
+  // Function to format population numbers
   const formatPopulation = (population) => {
     if (!population) return 'N/A';
     return new Intl.NumberFormat().format(population);
   };
 
+  // Function to filter countries based on search and region
+  const filteredCountries = countries.filter((country) => {
+    const matchesSearch = country.name.common.toLowerCase().includes(search.toLowerCase());
+    const matchesRegion = selectedRegion === 'All' || country.region === selectedRegion;
+    return matchesSearch && matchesRegion;
+  });
+
   return (
     <div>
-      <div className={styles.display}>
+      {/* Search and Filter Section */}
+      <div className={styles.filterContainer} onClick={() => inputRef.current?.focus()}>
+          <div className={styles.inputContainer} >
 
-        
-
-        {countries.slice(0,10).map((country, index) => (
+                <div className={styles.iconContainer}>
+                  <IoMdSearch className={styles.icon}/>
+                </div>
+              <input
+                type="text"
+                placeholder="Search for a country..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className={styles.searchBox}
+              />
+          </div>
 
           
-          <div key={index} className={styles.displayEach}>
-            {/* <a to={`/country/${country.name.common}`}> */}
 
-              <ListDisplayComponent
-                countryName={country.name.common}
-                image={country.flags.svg}
-                flagName={`Flag of ${country.name.common}`}
-                population={formatPopulation(country.population)}
-                region={country.region}
-                capital={country.capital?.[0]}
-              />
-            {/* </a> */}
+            <select
+              value={selectedRegion}
+              onChange={(e) => setSelectedRegion(e.target.value)}
+              className={styles.customSelect}
+            >
+              <option value="All">All Continents</option>
+              <option value="Africa">Africa</option>
+              <option value="Americas">Americas</option>
+              <option value="Asia">Asia</option>
+              <option value="Europe">Europe</option>
+              <option value="Oceania">Oceania</option>
+            </select>
+          
+
+      </div>
+
+      {/* Display Filtered Countries */}
+      <div className={styles.display}>
+        {filteredCountries.map((country, index) => (
+          <div key={index} className={styles.displayEach}>
+            <ListDisplayComponent
+              countryName={country.name.common}
+              image={country.flags.svg}
+              flagName={`Flag of ${country.name.common}`}
+              population={formatPopulation(country.population)}
+              region={country.region}
+              capital={country.capital?.[0]}
+            />
           </div>
         ))}
       </div>
@@ -68,5 +82,3 @@ const DisplayLayoutComponent = () => {
 };
 
 export default DisplayLayoutComponent;
-
-

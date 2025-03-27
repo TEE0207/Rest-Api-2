@@ -5,17 +5,28 @@
     flex-direction: column;
     /* justify-content: center; */
     align-items: start;
-    row-gap: 0.8rem;
+    row-gap: 1.5rem;
+    background-color: white;
+    padding-bottom: 4rem;
+    border-radius: 0.5rem;
+
 }
 
-.imageContainer{
+.imageContainer {
     width: 100%;
-    height: auto;
+    height: 200px; /* Set your desired uniform height */
+    overflow: hidden; /* Ensures no overflow if images are larger than the container */
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+
+
+
 }
 
-.imageContainer{
+.image {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container without distortion */
 }
 
 .titleAndDescriptionContainer{
@@ -25,12 +36,16 @@
     flex-direction: column;
     align-items: start;
     row-gap: 1rem;
+    padding-left: 1.2rem;
+    /* background-color: white; */
 
 }
 
 .countryTitleContainer{
     width: fit-content;
     height: auto;
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 
 
