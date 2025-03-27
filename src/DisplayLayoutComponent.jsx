@@ -1,6 +1,6 @@
 import { useState , useRef } from 'react';
 import { IoMdSearch } from "react-icons/io";
-import { useLoaderData } from 'react-router';
+import { NavLink, useLoaderData } from 'react-router';
 import ListDisplayComponent from './AllOtherComponent/ListDisplayComponent';
 import styles from './displaylayoutcomponent.module.css';
 
@@ -66,14 +66,17 @@ const DisplayLayoutComponent = () => {
       <div className={styles.display}>
         {filteredCountries.map((country, index) => (
           <div key={index} className={styles.displayEach}>
-            <ListDisplayComponent
-              countryName={country.name.common}
-              image={country.flags.svg}
-              flagName={`Flag of ${country.name.common}`}
-              population={formatPopulation(country.population)}
-              region={country.region}
-              capital={country.capital?.[0]}
-            />
+            <NavLink to={`/country/${country.name.common}`} >
+            
+              <ListDisplayComponent
+                countryName={country.name.common}
+                image={country.flags.svg}
+                flagName={`Flag of ${country.name.common}`}
+                population={formatPopulation(country.population)}
+                region={country.region}
+                capital={country.capital?.[0]}
+              />
+            </NavLink>
           </div>
         ))}
       </div>

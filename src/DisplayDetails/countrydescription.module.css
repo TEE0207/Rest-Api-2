@@ -2,3 +2,17 @@
     width: 100%;
     height: auto;
 }
+
+.countryNameContainer{
+    width: 100%;
+    height: auto;
+    text-align: start;
+}
+
+.bottomSideContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+}
