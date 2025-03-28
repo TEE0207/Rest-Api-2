@@ -3,6 +3,7 @@ import { useParams, NavLink, useNavigate } from 'react-router';
 import BackButton from './DisplayDetails/BackButton';
 import CountryDescription from './DisplayDetails/CountryDescription';
 import FlagImageComponent from './DisplayDetails/FlagImageComponent';
+import Borders from './DisplayDetails/BorderComponent';
 
 const FinalCountryDetails = () => {
   const { countryName } = useParams();
@@ -49,6 +50,8 @@ const FinalCountryDetails = () => {
      navigate(-1)
   }
 
+ 
+
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
 
@@ -93,44 +96,62 @@ const FinalCountryDetails = () => {
 
       {/* Border Countries */}
       {borderCountries.length > 0 && (
+
+
+       
         <div>
           <h3>Border Countries:</h3>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
             {borderCountries.map((borderCountry) => (
-              <div 
-                key={borderCountry.cca3} 
-                style={{
-                  border: '2px solid black',
-                  padding: '15px',
-                  borderRadius: '10px',
-                  background: '#f8f8f8',
-                  width: '200px',
-                  textAlign: 'center',
-                  boxShadow: '3px 3px 10px rgba(0, 0, 0, 0.2)',
-                }}
-              >
-                <img 
-                  src={borderCountry.flags.svg} 
-                  alt={`Flag of ${borderCountry.name.common}`} 
-                  width="100" 
-                  style={{ borderRadius: '5px' }} 
-                />
-                <h4>{borderCountry.name.common}</h4>
-                <NavLink 
-                  to={`/country/${borderCountry.name.common}`} 
-                  style={{
-                    textDecoration: 'none',
-                    color: 'white',
-                    background: '#007BFF',
-                    padding: '5px 10px',
-                    borderRadius: '5px',
-                    display: 'inline-block',
-                    marginTop: '5px',
-                  }}
-                >
-                  View Details
-                </NavLink>
-              </div>
+
+                
+        
+            //   <div 
+            //     key={borderCountry.cca3} 
+            //     style={{
+            //       border: '2px solid black',
+            //       padding: '15px',
+            //       borderRadius: '10px',
+            //       background: '#f8f8f8',
+            //       width: '200px',
+            //       textAlign: 'center',
+            //       boxShadow: '3px 3px 10px rgba(0, 0, 0, 0.2)',
+            //     }}
+            //   >
+            //     <img 
+            //       src={borderCountry.flags.svg} 
+            //       alt={`Flag of ${borderCountry.name.common}`} 
+            //       width="100" 
+            //       style={{ borderRadius: '5px' }} 
+            //     />
+            //     <h4>{borderCountry.name.common}</h4>
+            //     <NavLink 
+            //       to={`/country/${borderCountry.name.common}`} 
+            //       style={{
+            //         textDecoration: 'none',
+            //         color: 'white',
+            //         background: '#007BFF',
+            //         padding: '5px 10px',
+            //         borderRadius: '5px',
+            //         display: 'inline-block',
+            //         marginTop: '5px',
+            //       }}
+            //     >
+            //       View Details
+            //     </NavLink>
+            //   </div>
+                 <div>
+                 
+                    <Borders
+                    
+                     flag = {borderCountry.flags.svg}
+                     flagName ={`Flag of ${borderCountry.name.common}`} 
+                     countryName ={borderCountry.name.common}
+                     theLink = {{to : `/country/${borderCountry.name.common}`, text : "view Details"}}
+                     key={borderCountry.cca3}
+                    />
+
+                 </div>
             ))}
           </div>
         </div>

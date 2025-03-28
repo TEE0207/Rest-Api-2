@@ -1,0 +1,13 @@
+.detailedBorderContainer{
+    width: fit-content;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.flagImageContainer{
+    width: 100px;
+    height: 100px;
+    border-radius: 2rem;
+}
