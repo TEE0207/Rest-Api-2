@@ -56,14 +56,12 @@ const FinalCountryDetails = () => {
   return (
     <div className={styles.allContentContainer}>
 
-
-        <BackButton
-          backButton={ backButton}
-        />
-
-      {/* <button onClick={() => navigate(-1)} style={{ marginBottom: '10px', padding: '5px 10px', cursor: 'pointer' }}>
-        🔙 Back
-      </button> */}
+        <div className={styles.backButtonContainer}>
+            
+          <BackButton
+              backButton={ backButton}
+            />
+        </div>
 
      
 
@@ -106,61 +104,26 @@ const FinalCountryDetails = () => {
 
 
        
-        <div>
-          <h3>Border Countries:</h3>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
-            {borderCountries.map((borderCountry) => (
+        <div className={styles.borderSectionContainer}>
+              <div className={styles.borderTitleContainer}><h3>BORDER COUNTRIES</h3></div>
 
-                
-        
-            //   <div 
-            //     key={borderCountry.cca3} 
-            //     style={{
-            //       border: '2px solid black',
-            //       padding: '15px',
-            //       borderRadius: '10px',
-            //       background: '#f8f8f8',
-            //       width: '200px',
-            //       textAlign: 'center',
-            //       boxShadow: '3px 3px 10px rgba(0, 0, 0, 0.2)',
-            //     }}
-            //   >
-            //     <img 
-            //       src={borderCountry.flags.svg} 
-            //       alt={`Flag of ${borderCountry.name.common}`} 
-            //       width="100" 
-            //       style={{ borderRadius: '5px' }} 
-            //     />
-            //     <h4>{borderCountry.name.common}</h4>
-            //     <NavLink 
-            //       to={`/country/${borderCountry.name.common}`} 
-            //       style={{
-            //         textDecoration: 'none',
-            //         color: 'white',
-            //         background: '#007BFF',
-            //         padding: '5px 10px',
-            //         borderRadius: '5px',
-            //         display: 'inline-block',
-            //         marginTop: '5px',
-            //       }}
-            //     >
-            //       View Details
-            //     </NavLink>
-            //   </div>
-                 <div>
-                 
-                    <Borders
+              <div className={styles.borderContainer}>
+                 {borderCountries.map((borderCountry) => (
+
+              
                     
-                     flag = {borderCountry.flags.svg}
-                     flagName ={`Flag of ${borderCountry.name.common}`} 
-                     countryName ={borderCountry.name.common}
-                     theLink = {{to : `/country/${borderCountry.name.common}`, text : "view Details"}}
-                     key={borderCountry.cca3}
-                    />
-
-                 </div>
-            ))}
-          </div>
+                    
+                        <Borders
+                        
+                        flag = {borderCountry.flags.svg}
+                        flagName ={`Flag of ${borderCountry.name.common}`} 
+                        countryName ={borderCountry.name.common}
+                        theLink = {{to : `/country/${borderCountry.name.common}`, text : "View Details"}}
+                        key={borderCountry.cca3}
+                        />
+                ))}
+                
+              </div>
         </div>
       )}
     </div>

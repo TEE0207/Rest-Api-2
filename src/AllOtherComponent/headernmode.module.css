@@ -12,6 +12,11 @@
     height: auto;
     /* word-spacing: -0.1rem; */
     letter-spacing: -0.1rem;
+    color: #111517;
+}
+
+.headingLink{
+    color: #111517;
 }
 
 .iconAndTitleContainer{

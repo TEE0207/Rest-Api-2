@@ -1,8 +1,9 @@
 .allContentContainer{
     width: 100%;
-    height: auto;
+    height: 110vh;
     display: flex;
     flex-direction: column;
+    row-gap: 3rem;
 }
 .flagAndDescriptionContainer{
     width: 100%;
@@ -11,9 +12,34 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    /* background-color: aqua; */
 }
 
-/* .importedFlagContainer{
-    width: 50%;
+.borderContainer{
+    width: 100%;
     height: auto;
-} */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 3rem;
+}
+
+.borderTitleContainer{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.borderSectionContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+}
+
+.importedFlagContainer{
+    width: 40%;
+    height: auto;
+    /* background-color: black; */
+}

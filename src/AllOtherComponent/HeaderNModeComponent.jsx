@@ -1,6 +1,8 @@
 import { MdDarkMode , MdOutlineDarkMode } from "react-icons/md";
 import { useTheme } from "./ThemeProvider";
 import styles from "./headernmode.module.css"
+import { NavLink } from "react-router";
+
 
 
 const HeaderNModeComponent = () =>{
@@ -9,9 +11,11 @@ const HeaderNModeComponent = () =>{
 
    
     return(
+        
         <div className={styles.allContentContainer}>
             <div className={styles.headingContainer}>
-                <h1> Where in the world ? </h1>
+                <NavLink to={"/"} className={styles.headingLink}><h1> Where in the world ? </h1> </NavLink>
+                
             </div>
 
             < div className={styles.iconAndTitleContainer}>
