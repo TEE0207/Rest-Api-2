@@ -1,12 +1,19 @@
 .allContentContainer{
-    width: 100%;
+    width: 50%;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
 }
 
 .countryNameContainer{
     width: 100%;
     height: auto;
     text-align: start;
+    font-weight: 600;
+    font-size: 2rem;
+    color: #111517;
+
 }
 
 .bottomSideContainer{
@@ -14,5 +21,34 @@
     height: auto;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: start;
+}
+
+.rightSideDetailsContainer{
+    width: fit-content;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.4rem;
+}
+
+.leftSideDetailsContainer{
+    width: fit-content;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.4rem;
+}
+
+.detailContainer{
+    width: fit-content;
+    height: auto;
+    font-weight:550 ;
+    color: #111517;
+}
+
+.text{
+    color: rgba(17, 21, 23, 0.7);
+    font-weight: 300;
 }

@@ -10,7 +10,7 @@ const Borders = ({flag , flagName , countryName , theLink}) => {
 
             <div className={styles.detailedBorderContainer}>
                 <div className={styles.flagImageContainer}>
-                    <img src={flag} alt={flagName} />
+                    <img src={flag} alt={flagName}  className={styles.flagContainer}/>
                 </div>
 
                 <div className={styles.countryNameContainer}>

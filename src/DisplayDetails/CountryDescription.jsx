@@ -14,47 +14,47 @@ const CountryDescription = ({country, nativeName , population , region , subRegi
                 
                 <div className={styles.leftSideDetailsContainer}>
                     <div className={styles.detailContainer}>
-                        <p>Native Name : {nativeName}</p>
+                        <p>Native Name : <span className= {styles.text}>{nativeName}</span></p>
                     </div>
 
                     <div className={styles.detailContainer}>
-                       <p>Population : {population}</p>
+                       <p>Population : <span className= {styles.text}>{population}</span></p>
                     </div>
 
                     <div className={styles.detailContainer}>
-                        <p>Region : {region}</p>
+                        <p>Region : <span className= {styles.text}>{region}</span></p>
                     </div>
 
                     <div className={styles.detailContainer}>
-                        <p>Sub Region : {subRegion}</p>
+                        <p>Sub Region : <span className= {styles.text}>{subRegion}</span></p>
                     </div>
 
                     <div className={styles.detailContainer}>
-                        <p>Capital : {capital} </p>
+                        <p>Capital : <span className= {styles.text}>{capital}</span> </p>
                     </div>
                 </div>
             
 
-                <div className={styles.rightSideContainer}>
+                <div className={styles.rightSideDetailsContainer}>
 
                         <div className={styles.detailContainer}>
-                        <p>Top Level Domin : {domin}</p>
+                        <p>Top Level Domin : <span className= {styles.text}>{domin}</span></p>
                         </div>
 
                         <div className={styles.detailContainer}>
-                            <p>Currencies : {currencies}</p>
+                            <p>Currencies : <span className= {styles.text}>{currencies}</span></p>
                         </div>
 
                         <div className={styles.detailContainer}>
-                            <p>Languages : {languages}</p>
+                            <p>Languages : <span className= {styles.text}>{languages}</span></p>
                         </div>
 
                         <div className={styles.detailContainer}>
-                            <p>Car : {car}</p>
+                            <p>Car : <span className= {styles.text}>{car}</span></p>
                         </div>
 
                         <div className={styles.detailContainer}>
-                            <p>Time Zone : {timeZone}</p>
+                            <p>Time Zone : <span className= {styles.text}>{timeZone}</span></p>
                         </div>
 
 

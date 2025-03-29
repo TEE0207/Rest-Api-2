@@ -46,6 +46,8 @@
     height: auto;
     font-weight: 600;
     font-size: 1.2rem;
+    color: #111517;
+
 }
 
 
@@ -66,12 +68,16 @@
     width: fit-content;
     height: auto;
     font-weight:550 ;
+    color: #111517;
+
 }
 
 .regionContainer{
     width: fit-content;
     height: auto;
     font-weight:550 ;
+    color: #111517;
+
 
 }
 
@@ -79,5 +85,6 @@
     width: fit-content;
     height: auto;
     font-weight:550 ;
+    color: #111517;
 
 }

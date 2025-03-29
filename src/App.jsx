@@ -4,7 +4,7 @@ import { countriesLoader } from './OurListLoader';
 
 import { createBrowserRouter, RouterProvider , Route , createRoutesFromElements} from 'react-router';
 import { NewRoot } from './NewRoot';
-import FinalCountryDetails from './FinalCountryDetails';
+import FinalCountryDetails from './DisplayDetails/FinalCountryDetails';
 
 const router = createBrowserRouter(createRoutesFromElements(
 

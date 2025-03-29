@@ -7,6 +7,7 @@
   font-family: 'Nunito Sans', sans-serif;
 }
 
-.active{
+a{
   text-decoration: none;
+  color: none;
 }

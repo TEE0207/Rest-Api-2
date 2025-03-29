@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams, NavLink, useNavigate } from 'react-router';
-import BackButton from './DisplayDetails/BackButton';
-import CountryDescription from './DisplayDetails/CountryDescription';
-import FlagImageComponent from './DisplayDetails/FlagImageComponent';
-import Borders from './DisplayDetails/BorderComponent';
+import BackButton from './BackButton';
+import CountryDescription from './CountryDescription';
+import FlagImageComponent from './FlagImageComponent';
+import Borders from './BorderComponent';
+import styles from "./finalcountrydisplay.module.css"
 
 const FinalCountryDetails = () => {
   const { countryName } = useParams();
@@ -53,7 +54,7 @@ const FinalCountryDetails = () => {
  
 
   return (
-    <div style={{ padding: '20px', textAlign: 'center' }}>
+    <div className={styles.allContentContainer}>
 
 
         <BackButton
@@ -64,17 +65,19 @@ const FinalCountryDetails = () => {
         🔙 Back
       </button> */}
 
-      {/* <h1>{country.name.common}</h1> */}
-      {/* <img src={country.flags.svg} alt={`Flag of ${country.name.common}`} width="200" /> */}
-      {/* <p><strong>Region:</strong> {country.region}</p> */}
-      {/* <p><strong>Capital:</strong> {country.capital?.[0] || 'N/A'}</p> */}
-      {/* <p><strong>Population:</strong> {new Intl.NumberFormat().format(country.population)}</p> */}
+     
 
-      <FlagImageComponent 
-       flagImage={country.flags.svg}
-       alt = {`Flag of ${country.name.common}`}
-      />
+     <div className={styles.flagAndDescriptionContainer}>
 
+          <div className={styles.importedFlagContainer}>
+              <FlagImageComponent 
+                flagImage={country.flags.svg}
+                alt = {`Flag of ${country.name.common}`}
+                />
+          </div>
+            
+
+            
        <CountryDescription 
         country = {country.name.common} 
         nativeName = {country.name?.nativeName? Object.values(country.name.nativeName).map(n =>n.common).join(", ") : "N/A"}
@@ -89,10 +92,14 @@ const FinalCountryDetails = () => {
         
          languages = {Object.values(country.languages || {}).join(", ")}
          timeZone={country.timezones?.join(", ") || "N/A"}
-
-       
-       
        />
+
+
+
+     </div>
+     
+
+      
 
       {/* Border Countries */}
       {borderCountries.length > 0 && (

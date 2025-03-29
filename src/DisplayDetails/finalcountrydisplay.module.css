@@ -1,0 +1,19 @@
+.allContentContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.flagAndDescriptionContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .importedFlagContainer{
+    width: 50%;
+    height: auto;
+} */

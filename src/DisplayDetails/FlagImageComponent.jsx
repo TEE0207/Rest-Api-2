@@ -1,9 +1,11 @@
+import styles from "./flagimagecomponent.module.css"
+
 const FlagImageComponent = ({flagImage , flagName}) => {
 
 
     return(
-        <div>
-            <img src={flagImage} alt={flagName} />
+        <div className={styles.flagImageContainer}>
+            <img src={flagImage} alt={flagName} className={styles.flagImage}/>
         </div>
     )
 }

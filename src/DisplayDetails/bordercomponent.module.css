@@ -3,11 +3,33 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    align-items: center;
+    row-gap: 0.5rem;
+    padding: 1rem;
+    /* background-color: aqua; */
+     border: 1px solid black;
+     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+     border-radius: 1rem;
 }
 
 .flagImageContainer{
     width: 100px;
-    height: 100px;
-    border-radius: 2rem;
+    height: 60px;
+    overflow: hidden; /* Ensures no overflow if images are larger than the container */
+
+    border-radius: 1rem;
+    /* background-color: aqua; */
+}
+
+.flagContainer{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+
+    /* border-radius: 5rem; */
+}
+
+.countryNameContainer{
+    width: fit-content;
+    height: auto;
 }
