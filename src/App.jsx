@@ -1,7 +1,6 @@
 
 import DisplayLayoutComponent from './DisplayLayoutComponent';
 import { countriesLoader } from './OurListLoader';
-
 import { createBrowserRouter, RouterProvider , Route , createRoutesFromElements} from 'react-router';
 import { NewRoot } from './NewRoot';
 import FinalCountryDetails from './DisplayDetails/FinalCountryDetails';
@@ -10,9 +9,9 @@ const router = createBrowserRouter(createRoutesFromElements(
 
 <Route path='/' element={<NewRoot />}>
 
-<Route path='/' element={<DisplayLayoutComponent />} loader ={countriesLoader }/>
+      <Route path='/' element={<DisplayLayoutComponent />} loader ={countriesLoader }/>
 
-<Route path="/country/:countryName" element={<FinalCountryDetails />} />
+      <Route path="/country/:countryName" element={<FinalCountryDetails />} />
 
 
 

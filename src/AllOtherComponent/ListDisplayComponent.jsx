@@ -1,9 +1,16 @@
 import styles from "./listDisplay.module.css"
+import { useTheme } from './ThemeProvider';
+import stylesOne from "../rootlayout.module.css"
+
+
 const ListDisplayComponent = ({countryName,image, flagName, population, region, capital}) => {
 
 
+            const { isDarkMode } = useTheme();
+    
+
     return(
-        <div className={styles.allContentContainer}>
+        <div className={`${styles.allContentContainer} ${isDarkMode ? stylesOne.dark : stylesOne.light}`}>
 
             <div className={styles.imageContainer}>
                 <img src={image} alt={flagName} className={styles.image}/>
