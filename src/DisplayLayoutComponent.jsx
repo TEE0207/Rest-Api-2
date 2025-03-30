@@ -3,8 +3,15 @@ import { IoMdSearch } from "react-icons/io";
 import { NavLink, useLoaderData } from 'react-router';
 import ListDisplayComponent from './AllOtherComponent/ListDisplayComponent';
 import styles from './displaylayoutcomponent.module.css';
+import { useTheme } from './AllOtherComponent/ThemeProvider';
+import stylesOne from "./rootlayout.module.css"
+
+
 
 const DisplayLayoutComponent = () => {
+
+  const { isDarkMode } = useTheme();
+  
   const countries = useLoaderData();
 
   const inputRef = useRef(null);
@@ -14,10 +21,10 @@ const DisplayLayoutComponent = () => {
   const [selectedRegion, setSelectedRegion] = useState('All');
 
   // Function to format population numbers
-  const formatPopulation = (population) => {
-    if (!population) return 'N/A';
-    return new Intl.NumberFormat().format(population);
-  };
+  // const formatPopulation = (population) => {
+  //   if (!population) return 'N/A';
+  //   return new Intl.NumberFormat().format(population);
+  // };
 
   // Function to filter countries based on search and region
   const filteredCountries = countries.filter((country) => {
@@ -27,7 +34,8 @@ const DisplayLayoutComponent = () => {
   });
 
   return (
-    <div>
+    <div className= {isDarkMode ? stylesOne.dark : stylesOne.light}>
+
       {/* Search and Filter Section */}
       <div className={styles.filterContainer} onClick={() => inputRef.current?.focus()}>
           <div className={styles.inputContainer} >
@@ -40,7 +48,8 @@ const DisplayLayoutComponent = () => {
                 placeholder="Search for a country..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className={styles.searchBox}
+                className={`${styles.searchBox} ${isDarkMode ? stylesOne.dark : stylesOne.light}`}
+                
               />
           </div>
 
@@ -49,7 +58,7 @@ const DisplayLayoutComponent = () => {
             <select
               value={selectedRegion}
               onChange={(e) => setSelectedRegion(e.target.value)}
-              className={styles.customSelect}
+              className={`${styles.customSelect} ${isDarkMode ? stylesOne.dark : stylesOne.light}`}
             >
               <option value="All">All Continents</option>
               <option value="Africa">Africa</option>
@@ -67,12 +76,12 @@ const DisplayLayoutComponent = () => {
         {filteredCountries.map((country, index) => (
           <div key={index} className={styles.displayEach}>
             <NavLink to={`/country/${country.name.common}`} >
-            
+
               <ListDisplayComponent
                 countryName={country.name.common}
                 image={country.flags.svg}
                 flagName={`Flag of ${country.name.common}`}
-                population={formatPopulation(country.population)}
+                population = {new Intl.NumberFormat().format(country.population)}
                 region={country.region}
                 capital={country.capital?.[0]}
               />

@@ -11,3 +11,16 @@ a{
   text-decoration: none;
   color: none;
 }
+
+
+
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+}
+
+/* Define dark mode variables */
+[data-theme='dark'] {
+  --background-color: #000000;
+  --text-color: #ffffff;
+}

@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider , Route , createRoutesFromElements}
 import { NewRoot } from './NewRoot';
 import FinalCountryDetails from './DisplayDetails/FinalCountryDetails';
 
+
 const router = createBrowserRouter(createRoutesFromElements(
 
 <Route path='/' element={<NewRoot />}>
@@ -24,7 +25,7 @@ const router = createBrowserRouter(createRoutesFromElements(
 );
 
 function App() {
-  return <RouterProvider router={router} />;
+  return  <RouterProvider router={router} />
 }
 
 export default App;

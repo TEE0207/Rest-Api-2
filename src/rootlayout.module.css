@@ -8,12 +8,24 @@
     width: 100%;
     height: auto;
     padding: 0rem 4rem;
+    /* background-color: var(--background-color); */
 }
 
 .dark{
-    background-color: blue;
+    background-color: blue
 }
 
 .light{
-    background-color: #F2F2F2;
+    background-color: white
 }
+
+/* :root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+  }
+   */
+  /* Define dark mode variables */
+  /* [data-theme='dark'] {
+    --background-color: #000000;
+    --text-color: #ffffff;
+  } */

@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext ,useEffect } from 'react';
 
 // Create the context
 const ThemeContext = createContext();
@@ -7,6 +7,11 @@ const ThemeContext = createContext();
 export const ThemeProvider = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+  }, [isDarkMode]);
+
+  
   const toggleTheme = () => {
     setIsDarkMode((prevMode) => !prevMode);
   };
@@ -19,4 +24,15 @@ export const ThemeProvider = ({ children }) => {
 };
 
 // Custom hook to use the ThemeContext
-export const useTheme = () => useContext(ThemeContext);
+// export const useTheme = () => useContext(ThemeContext);
+
+export const useTheme = () => {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error('useTheme must be used within a ThemeProvider');
+  }
+  return context;
+};
+
+
+
