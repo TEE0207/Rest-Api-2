@@ -4,6 +4,9 @@ import styles from "./bordercomponent.module.css"
 
 const Borders = ({flag , flagName , countryName , theLink}) => {
 
+       
+    
+
     return(
         
            
