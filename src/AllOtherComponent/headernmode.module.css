@@ -5,6 +5,18 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+  /* margin-bottom: 5rem; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding:2rem 4rem 2rem 4rem ;
+    /* padding-top: 2rem;
+    padding-bottom: 2rem; */
+    /* background-color: rgba(255, 255, 255, 0.2); */
+  box-shadow: inset 0 1px 0.5px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px); 
     /* --background-color-dark: blue; */
 
 }
@@ -14,12 +26,12 @@
     height: auto;
     /* word-spacing: -0.1rem; */
     letter-spacing: -0.1rem;
-    color: #111517;
+    color: var(--text-color)
     
 }
 
 .headingLink{
-    color: #111517;
+    color: var(--text-color);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -29,6 +41,7 @@
 
 .homeIcon{
     font-size: 1.5rem ;
+    color: var(--text-color);
 }
 
 .iconAndTitleContainer{
@@ -56,4 +69,5 @@
     width: fit-content;
     height: auto;
     font-weight: 600;
+    color: var(--text-color);
 }

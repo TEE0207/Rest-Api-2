@@ -9,17 +9,21 @@ export const NewRoot = () =>{
         const { isDarkMode } = useTheme();
     
     return(
-        <div className={stylesOne.mainPage}>
+        <div className= {`${stylesOne.mainPage} ${isDarkMode ? stylesOne.dark: stylesOne.light}`} >
 
             < div className={`${stylesOne.theHeader} ${isDarkMode ? stylesOne.dark: stylesOne.light}`}>
                 <HeaderNModeComponent />
 
 
-               
-                <Outlet />
+              
+                
                 
                     
             </div>
+
+            <div className={`${stylesOne.outLetContainer} ${isDarkMode ? stylesOne.dark: stylesOne.light}`}>
+                <Outlet />
+               </div>
 
           
         </div>

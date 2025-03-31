@@ -3,6 +3,8 @@ import { useTheme } from "./ThemeProvider";
 import styles from "./headernmode.module.css"
 import { NavLink } from "react-router";
 import { FaHome } from "react-icons/fa";
+import stylesOne from "../rootlayout.module.css"
+
 
 
 
@@ -15,7 +17,7 @@ const HeaderNModeComponent = () =>{
    
     return(
         
-        <div className={styles.allContentContainer}>
+        <div className={`${styles.allContentContainer} ${isDarkMode ? stylesOne.dark: stylesOne.light}`}>
             <div className={styles.headingContainer}>
                 <NavLink to={"/"} className={styles.headingLink}> <FaHome className={styles.homeIcon}/> <h1> Where in the world ? </h1> </NavLink>
                 

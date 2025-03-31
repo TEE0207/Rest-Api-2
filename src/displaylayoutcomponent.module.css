@@ -1,4 +1,10 @@
-
+.allContentContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
 
 .display{
     width: 100%;
@@ -46,6 +52,7 @@
 .icon{
     width: 100%;
     height: 100%;
+    color: var(--text-color);
 }
 
 .searchBox{
@@ -54,11 +61,16 @@
     width: 100%;
 }
 
+.searchBox::placeholder{
+    color: var(--text-color);
+}
+
 .customSelect{
     padding: 1rem 1.5rem;
     border: none;
     outline: none;
     cursor: pointer;
+    color: var(--text-color);
 }
 
   

@@ -20,12 +20,6 @@ const DisplayLayoutComponent = () => {
   const [search, setSearch] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('All');
 
-  // Function to format population numbers
-  // const formatPopulation = (population) => {
-  //   if (!population) return 'N/A';
-  //   return new Intl.NumberFormat().format(population);
-  // };
-
   // Function to filter countries based on search and region
   const filteredCountries = countries.filter((country) => {
     const matchesSearch = country.name.common.toLowerCase().includes(search.toLowerCase());
@@ -34,7 +28,7 @@ const DisplayLayoutComponent = () => {
   });
 
   return (
-    <div className= {isDarkMode ? stylesOne.dark : stylesOne.light}>
+    <div className={styles.allContentContainer}>
 
       {/* Search and Filter Section */}
       <div className={styles.filterContainer} onClick={() => inputRef.current?.focus()}>
@@ -60,7 +54,7 @@ const DisplayLayoutComponent = () => {
               onChange={(e) => setSelectedRegion(e.target.value)}
               className={`${styles.customSelect} ${isDarkMode ? stylesOne.dark : stylesOne.light}`}
             >
-              <option value="All">All Continents</option>
+              <option value="All" >All Continents</option>
               <option value="Africa">Africa</option>
               <option value="Americas">Americas</option>
               <option value="Asia">Asia</option>

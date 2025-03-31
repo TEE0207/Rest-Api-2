@@ -32,4 +32,5 @@
 .countryNameContainer{
     width: fit-content;
     height: auto;
+    color: var(--text-color);
 }

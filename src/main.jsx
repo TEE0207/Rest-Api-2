@@ -11,3 +11,15 @@ createRoot(document.getElementById('root')).render(
     </ThemeProvider>
   </StrictMode>,
 )
+
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import App from './App';
+// import { ThemeProvider } from "./AllOtherComponent/ThemeProvider";
+
+// ReactDOM.render(
+//   <ThemeProvider>
+//     <App />
+//   </ThemeProvider>,
+//   document.getElementById('root')
+// );
