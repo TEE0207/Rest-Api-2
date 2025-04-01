@@ -51,7 +51,7 @@
         overflow-x: hidden;
         display: flex;
         flex-direction: column;
-        row-gap: 10rem;
+        row-gap: 7rem;
         padding: 0rem 1rem;
         /* position: absolute; */
     }

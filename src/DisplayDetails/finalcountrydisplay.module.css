@@ -22,6 +22,8 @@
     flex-direction: row;
     justify-content: center;
     column-gap: 3rem;
+    flex-wrap: wrap;
+    row-gap: 2rem;
 }
 
 .borderTitleContainer{
@@ -53,6 +55,7 @@
         flex-direction: column;
         justify-content: none;
         align-items: start;
+        row-gap: 2.5rem;
         /* background-color: aqua; */
     }
 
@@ -61,4 +64,13 @@
         height: auto;
         /* background-color: black; */
     }
+
+    /* .borderContainer{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        column-gap: 3rem;
+    } */
 }
