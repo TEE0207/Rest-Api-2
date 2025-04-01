@@ -82,7 +82,7 @@
         height: auto;
         display: flex;
         flex-direction: column;
-        row-gap: 0.4rem;
+        row-gap: 1rem;
     }
     
     .leftSideDetailsContainer{
@@ -90,7 +90,7 @@
         height: auto;
         display: flex;
         flex-direction: column;
-        row-gap: 0.4rem;
+        row-gap: 1rem;
     }
 
     .detailContainer{
