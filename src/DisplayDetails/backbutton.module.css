@@ -14,6 +14,7 @@
     column-gap: 0.5rem;
     padding: 0.8rem 2rem 0.8rem 1.5rem;
     border: none;
+    cursor: pointer;
     /* font-size: 1.6rem; */
 }
 
