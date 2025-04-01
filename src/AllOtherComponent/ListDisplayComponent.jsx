@@ -1,4 +1,4 @@
-import styles from "./listDisplay.module.css"
+import styles from "./listdisplay.module.css"
 import { useTheme } from './ThemeProvider';
 import stylesOne from "../rootlayout.module.css"
 
