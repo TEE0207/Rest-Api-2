@@ -72,3 +72,57 @@
     font-weight: 600;
     color: var(--text-color);
 }
+
+@media screen and (max-width : 480px){
+
+    .allContentContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+  /* margin-bottom: 5rem; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding:2rem 1rem 2rem 1rem ;
+    /* padding-top: 2rem;
+    padding-bottom: 2rem; */
+    /* background-color: rgba(255, 255, 255, 0.2); */
+  box-shadow: inset 0 1px 0.5px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px); 
+    /* --background-color-dark: blue; */
+
+}
+
+.headingContainer{
+    width: fit-content;
+    height: auto;
+    font-size: 0.6rem;
+    /* word-spacing: -0.1rem; */
+    letter-spacing: -0.1rem;
+    color: var(--text-color)
+}
+
+.titleContainer{
+    width: fit-content;
+    height: auto;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: var(--text-color);
+}
+
+.iconAndTitleContainer{
+    width: fit-content;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.2rem;
+    align-items: center;
+    
+    
+}
+}

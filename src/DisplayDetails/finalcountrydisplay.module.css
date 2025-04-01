@@ -44,3 +44,21 @@
     height: auto;
     /* background-color: black; */
 }
+
+@media screen and (max-width : 480px) {
+    .flagAndDescriptionContainer{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: none;
+        align-items: start;
+        /* background-color: aqua; */
+    }
+
+    .importedFlagContainer{
+        width: 100%;
+        height: auto;
+        /* background-color: black; */
+    }
+}

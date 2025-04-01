@@ -54,7 +54,8 @@ const DisplayLayoutComponent = () => {
               onChange={(e) => setSelectedRegion(e.target.value)}
               className={`${styles.customSelect} ${isDarkMode ? stylesOne.dark : stylesOne.light}`}
             >
-              <option value="All" >All Continents</option>
+              <option value="All"> Filter by region</option>
+              {/* <option value="All" >All Continents</option> */}
               <option value="Africa">Africa</option>
               <option value="Americas">Americas</option>
               <option value="Asia">Asia</option>
