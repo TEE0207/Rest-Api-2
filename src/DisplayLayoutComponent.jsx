@@ -5,6 +5,8 @@ import ListDisplayComponent from './AllOtherComponent/ListDisplayComponent';
 import styles from './displaylayoutcomponent.module.css';
 import { useTheme } from './AllOtherComponent/ThemeProvider';
 import stylesOne from "./rootlayout.module.css"
+import LoadingSpinner from './SpinnerComponent';
+
 
 
 
@@ -13,6 +15,10 @@ const DisplayLayoutComponent = () => {
   const { isDarkMode } = useTheme();
   
   const countries = useLoaderData();
+
+  if (!countries) {
+    return <LoadingSpinner />;
+  }
 
   const inputRef = useRef(null);
 

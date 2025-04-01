@@ -5,6 +5,8 @@ import CountryDescription from './CountryDescription';
 import FlagImageComponent from './FlagImageComponent';
 import Borders from './BorderComponent';
 import styles from "./finalcountrydisplay.module.css"
+import LoadingSpinner from '../SpinnerComponent';
+
 
 const FinalCountryDetails = () => {
   const { countryName } = useParams();
@@ -44,7 +46,11 @@ const FinalCountryDetails = () => {
     fetchCountryData();
   }, [countryName]);
 
-  if (loading) return <p>Loading country details...</p>;
+  // if (loading) return <p>Loading country details...</p>;
+
+  if (loading) {
+      return <LoadingSpinner />;
+    }
   if (!country) return <p>Country not found.</p>;
 
   const backButton = () => {
