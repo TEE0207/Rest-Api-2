@@ -1,4 +1,4 @@
-/* src/components/LoadingSpinner.css */
+/* src/components/LoadingSpinner.css
 .loadingSpinner {
     display: flex;
     justify-content: center;
@@ -19,4 +19,125 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+   */
+
+   /* shimmer.css */
+
+   /* .allContentContainer {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    justify-content: center;
+  }
+  
+  .loadingCard {
+    width: 250px;
+    height: 320px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .spinner {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+      to right,
+      #e0e0e0 0%,
+      #f8f8f8 50%,
+      #e0e0e0 100%
+    );
+    position: absolute;
+    top: 0;
+    left: -100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 10px;
+  }
+  
+  @keyframes shimmer {
+    100% {
+      left: 100%;
+    }
+  } */
+
+  .allContentContainer {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    justify-content: center;
+  }
+  
+  .loadingCard {
+    width: 250px;
+    height: 320px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 10px;
+  }
+  
+  .shimmerBlock {
+    background-color: #e0e0e0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+  }
+  
+  .shimmer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      #e0e0e0 0%,
+      #f8f8f8 50%,
+      #e0e0e0 100%
+    );
+    animation: shimmer 1.5s infinite;
+  }
+  
+  .imagePlaceholder {
+    height: 120px;
+    width: 100%;
+  }
+  
+  .titlePlaceholder {
+    height: 20px;
+    width: 70%;
+  }
+  
+  .textPlaceholder {
+    height: 14px;
+    width: 100%;
+  }
+  
+  .buttonPlaceholder {
+    margin-top: auto;
+    height: 30px;
+    width: 60%;
+    align-self: center;
+  }
+  
+  @keyframes shimmer {
+    100% {
+      left: 100%;
+    }
+  }
+  
   

@@ -1,4 +1,4 @@
-import { useState , useRef } from 'react';
+import { useState , useRef , useEffect } from 'react';
 import { IoMdSearch } from "react-icons/io";
 import { NavLink, useLoaderData } from 'react-router';
 import ListDisplayComponent from './AllOtherComponent/ListDisplayComponent';
@@ -12,19 +12,31 @@ import LoadingSpinner from './SpinnerComponent';
 
 const DisplayLayoutComponent = () => {
 
-  const { isDarkMode } = useTheme();
-  
-  const countries = useLoaderData();
 
-  if (!countries) {
-    return <LoadingSpinner />;
-  }
-
-  const inputRef = useRef(null);
+  const data = useLoaderData();
 
   // State for search query and region filter
   const [search, setSearch] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('All');
+
+  const [countries, setCountries] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const { isDarkMode } = useTheme();
+  
+
+  useEffect(() => {
+    setCountries(data);
+    setLoading(false);
+  }, [data]);
+
+  const inputRef = useRef(null);
+
+
+  if (loading) return <LoadingSpinner />;
+
+
+  
 
   // Function to filter countries based on search and region
   const filteredCountries = countries.filter((country) => {
