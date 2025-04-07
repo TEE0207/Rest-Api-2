@@ -1,6 +1,8 @@
 import styles from "./listdisplay.module.css"
 import { useTheme } from './ThemeProvider';
 import stylesOne from "../rootlayout.module.css"
+import React from 'react';
+
 
 
 const ListDisplayComponent = ({countryName,image, flagName, population, region, capital}) => {
@@ -52,4 +54,17 @@ const ListDisplayComponent = ({countryName,image, flagName, population, region, 
     )
 }
 
-export default ListDisplayComponent
+// What does React.memo do?
+// It prevents unnecessary re-renders if the props haven't changed.
+
+// So if you're re-rendering the parent (like DisplayLayoutComponent) but a country card’s props are the same — it won’t re-render that card. Big win for performance.
+
+//So what does React.memo check?
+//It compares the values of the props between renders.
+
+//If the values are the same as last render → no re-render ✅
+
+//If even one value is different → re-render 🔁
+
+
+export default React.memo(ListDisplayComponent);

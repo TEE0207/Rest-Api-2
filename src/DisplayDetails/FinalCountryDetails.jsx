@@ -5,7 +5,7 @@ import CountryDescription from './CountryDescription';
 import FlagImageComponent from './FlagImageComponent';
 import Borders from './BorderComponent';
 import styles from "./finalcountrydisplay.module.css"
-import LoadingSpinner from '../SpinnerComponent';
+import LoadingSpinner from '../ShimmerLoader';
 
 
 const FinalCountryDetails = () => {

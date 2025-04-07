@@ -1,11 +1,11 @@
-import { useState , useRef , useEffect } from 'react';
+import { useState , useRef , useEffect , useMemo } from 'react';
 import { IoMdSearch } from "react-icons/io";
 import { NavLink, useLoaderData } from 'react-router';
 import ListDisplayComponent from './AllOtherComponent/ListDisplayComponent';
 import styles from './displaylayoutcomponent.module.css';
 import { useTheme } from './AllOtherComponent/ThemeProvider';
 import stylesOne from "./rootlayout.module.css"
-import LoadingSpinner from './SpinnerComponent';
+import ShimmerLoader from './ShimmerLoader';
 
 
 
@@ -33,17 +33,26 @@ const DisplayLayoutComponent = () => {
   const inputRef = useRef(null);
 
 
-  if (loading) return <LoadingSpinner />;
+ 
 
 
   
 
-  // Function to filter countries based on search and region
-  const filteredCountries = countries.filter((country) => {
-    const matchesSearch = country.name.common.toLowerCase().includes(search.toLowerCase());
-    const matchesRegion = selectedRegion === 'All' || country.region === selectedRegion;
-    return matchesSearch && matchesRegion;
-  });
+  // Function to filter countries based on search and region 
+  // To avoid re-running .filter() on every render unnecessarily:
+
+  const filteredCountries = useMemo(() => {
+    return countries.filter((country) => {
+      const matchesSearch = country.name.common.toLowerCase().includes(search.toLowerCase());
+      const matchesRegion = selectedRegion === 'All' || country.region === selectedRegion;
+      return matchesSearch && matchesRegion;
+    });
+
+          //dependencies//
+  }, [countries, search, selectedRegion]);
+
+
+  if (loading) return <ShimmerLoader />;
 
   return (
     <div className={styles.allContentContainer}>
@@ -87,17 +96,20 @@ const DisplayLayoutComponent = () => {
       {/* Display Filtered Countries */}
       <div className={styles.display}>
         {filteredCountries.map((country, index) => (
-          <div key={index} className={styles.displayEach}>
+
+          //
+          <div key={country.cca3 || index}
+          className={styles.displayEach}>
             <NavLink to={`/country/${country.name.common}`} >
 
               <ListDisplayComponent
                 countryName={country.name.common}
                 image={country.flags.svg}
-                flagName={`Flag of ${country.name.common}`}
+                flagName={`Flag of ${country.name?.common || "Unknown"}`}
                 population = {new Intl.NumberFormat().format(country.population)}
                 region={country.region}
-                capital={country.capital?.[0]}
-              />
+                capital={country.capital?.[0] || "N/A"}
+                />
             </NavLink>
           </div>
         ))}
