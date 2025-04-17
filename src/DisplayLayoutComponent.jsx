@@ -52,9 +52,11 @@ const DisplayLayoutComponent = () => {
   }, [countries, search, selectedRegion]);
 
 
-  if (loading) return <ShimmerLoader />;
+  // if (loading) return <ShimmerLoader />;
 
-  return (
+   return loading ? (
+   <ShimmerLoader /> 
+   ) : (
     <div className={styles.allContentContainer}>
 
       {/* Search and Filter Section */}
@@ -104,7 +106,7 @@ const DisplayLayoutComponent = () => {
 
               <ListDisplayComponent
                 countryName={country.name.common}
-                image={country.flags.svg}
+                image={country.flags?.svg || ""}
                 flagName={`Flag of ${country.name?.common || "Unknown"}`}
                 population = {new Intl.NumberFormat().format(country.population)}
                 region={country.region}

@@ -75,7 +75,7 @@ const FinalCountryDetails = () => {
 
           <div className={styles.importedFlagContainer}>
               <FlagImageComponent 
-                flagImage={country.flags.svg}
+                flagImage={country.flags ?.svg || ""}
                 alt = {`Flag of ${country.name.common}`}
                 />
           </div>
