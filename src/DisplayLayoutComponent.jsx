@@ -41,9 +41,11 @@ const DisplayLayoutComponent = () => {
   // Function to filter countries based on search and region 
   // To avoid re-running .filter() on every render unnecessarily:
 
+  //You want React to recalculate that array only when inputs change (countries, search, or selectedRegion).
   const filteredCountries = useMemo(() => {
     return countries.filter((country) => {
       const matchesSearch = country.name.common.toLowerCase().includes(search.toLowerCase());
+      // matchesRegion will be returning 'All === will be showing all the region || OR if country.region (which is gotton from country filter ) is equal to === selectedRegion (selected region will be updated on whatever the user selected from the options )
       const matchesRegion = selectedRegion === 'All' || country.region === selectedRegion;
       return matchesSearch && matchesRegion;
     });
@@ -97,11 +99,16 @@ const DisplayLayoutComponent = () => {
 
       {/* Display Filtered Countries */}
       <div className={styles.display}>
+
+        {/* so what ever is return in the filteredCountries will be mapped over here. */}
         {filteredCountries.map((country, index) => (
 
           //
           <div key={country.cca3 || index}
+
           className={styles.displayEach}>
+
+   {/* when you click on each country navigate to `/country/ ${country.name.common}` you navigate to the country you clicked on i.e when you click on one of the ListDisplayComponent, it will give you the country name /country/:countryName which is gotten from country from country.name.common */}
             <NavLink to={`/country/${country.name.common}`} >
 
               <ListDisplayComponent

@@ -9,7 +9,11 @@ import LoadingSpinner from '../ShimmerLoader';
 
 
 const FinalCountryDetails = () => {
+
+  // we extract the country name from the url using useParams() which is saved in countryName
   const { countryName } = useParams();
+  
+
   const navigate = useNavigate();
   const [country, setCountry] = useState(null);
   const [borderCountries, setBorderCountries] = useState([]);
@@ -19,6 +23,7 @@ const FinalCountryDetails = () => {
     const fetchCountryData = async () => {
       try {
         setLoading(true);
+        // we use the countryName to fetch the country data here
         const response = await fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`);
         const data = await response.json();
         
@@ -65,6 +70,7 @@ const FinalCountryDetails = () => {
         <div className={styles.backButtonContainer}>
             
           <BackButton
+          // This back button is component that has onClick backButton as props. So we use the props here and write the onClick function
               backButton={ backButton}
             />
         </div>
