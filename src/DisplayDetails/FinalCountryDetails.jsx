@@ -27,6 +27,7 @@ const FinalCountryDetails = () => {
         const response = await fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`);
         const data = await response.json();
         
+        // if data which is country is more than one, just give us the first one 
         if (data.length > 0) {
           const countryData = data[0];
           setCountry(countryData);
